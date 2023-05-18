@@ -14,8 +14,7 @@ internal class WeatherMapper : Mapper<WeatherResponse, WeatherComponent> {
             count = count,
             data = data.map {
                 mapWeather(it)
-            },
-            minutely = minutely
+            }
         )
     }
 
