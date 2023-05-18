@@ -3,13 +3,9 @@ package com.tempoagora.presentation.fragment
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
-import android.location.Location
-import android.location.LocationManager
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -56,11 +52,12 @@ class ClimateFragment : Fragment(R.layout.fragment_climate) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 fetchLocation()
             } else {
-                Toast.makeText(requireContext(), "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), "Permissão Negada", Toast.LENGTH_SHORT)
                     .show()
             }
         }
     }
+
     private fun requestLocationPermissions() {
         requestPermissions(
             arrayOf(
@@ -80,6 +77,7 @@ class ClimateFragment : Fragment(R.layout.fragment_climate) {
             Manifest.permission.ACCESS_COARSE_LOCATION
         ) == PackageManager.PERMISSION_GRANTED)
     }
+
     @SuppressLint("MissingPermission")
     private fun fetchLocation() {
         if (isLocationPermissionGranted()) {
@@ -99,6 +97,7 @@ class ClimateFragment : Fragment(R.layout.fragment_climate) {
         when (state) {
             is MainViewAction.LoadingState -> {
                 binding.progressCircular.isVisible = state.isLoading
+                binding.scrollView2.isVisible = state.isLoading.not()
             }
 
             is MainViewAction.ErrorScreen -> {
@@ -131,7 +130,9 @@ class ClimateFragment : Fragment(R.layout.fragment_climate) {
                 binding.cityName.text = data.cityName
                 binding.tvWeather.text = data.temp.toString() + "°C"
                 binding.tvWeatherStatus.text = data.weather.description
-                binding.btnIqa.text = data.aqi.toString()
+                binding.btnIqa.text = "IQA " + data.aqi.toString()
+                binding.includeSunrise.tvSunrise.text = "Nascer do Sol: " + data.sunrise
+                binding.includeSunrise.tvSunset.text = "Por do Sol: " + data.sunset
 
             }
         }
