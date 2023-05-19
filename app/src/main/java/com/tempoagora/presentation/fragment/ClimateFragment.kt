@@ -165,70 +165,150 @@ class ClimateFragment : Fragment(R.layout.fragment_climate) {
 
     private fun setupBackgroundColor(temp: WeatherLocalComponent?) = with(binding) {
         temp?.let {
-            val drawableResId = when (temp.code) {
-                in 200..202 -> {
+            when (temp.code) {
+                in 200..201, 202 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_200)
                     setupStatusBarColor(R.color.sky_200)
-                    R.drawable.gradient_200
+                    animation.setAnimation(R.raw.rain)
                 }
 
                 in 230..231, 233 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_230)
                     setupStatusBarColor(R.color.sky_230)
-                    R.drawable.gradient_230
+                    animation.setAnimation(R.raw.rain)
                 }
 
-                in 300..302 -> {
+                in 300..301, 302 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_300)
                     setupStatusBarColor(R.color.sky_300)
-                    R.drawable.gradient_300
+                    animation.setAnimation(R.raw.rain)
                 }
 
                 in 500..501, 522 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_500)
                     setupStatusBarColor(R.color.sky_500)
-                    R.drawable.gradient_500
+                    animation.setAnimation(R.raw.rain)
                 }
 
                 in 600..601, 610 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_600)
                     setupStatusBarColor(R.color.sky_600)
-                    R.drawable.gradient_600
                 }
 
                 in 611..612, 751 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_611)
                     setupStatusBarColor(R.color.sky_611)
-                    R.drawable.gradient_611
                 }
 
                 800 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_blue_orenge)
                     setupStatusBarColor(R.color.sky_800)
-                    R.drawable.gradient_blue_orenge
                 }
 
                 in 801..802 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_801)
                     setupStatusBarColor(R.color.sky_801)
-                    R.drawable.gradient_801
+                    animation.setAnimation(R.raw.clouds)
                 }
 
                 803 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_801)
                     setupStatusBarColor(R.color.sky_803)
-                    R.drawable.gradient_801
+                    animation.setAnimation(R.raw.clouds)
                 }
 
                 804 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_804)
                     setupStatusBarColor(R.color.sky_804)
-                    R.drawable.gradient_804
+                    animation.setAnimation(R.raw.clouds)
                 }
 
                 900 -> {
+                    constraintMain.setBackgroundResource(R.drawable.gradient_blue_blue)
                     setupStatusBarColor(R.color.blue)
-                    R.drawable.gradient_blue_blue
                 }
 
-                else -> null
-            }
+                else -> {
 
-            drawableResId?.let {
-                constraintMain.setBackgroundResource(drawableResId)
+                }
+
             }
         }
     }
+//    private fun setupBackgroundColor(temp: WeatherLocalComponent?) = with(binding) {
+//        temp?.let {
+//            val drawableResId = when (temp.code) {
+//                in 200..202 -> {
+//                    setupStatusBarColor(R.color.sky_200)
+//                    R.drawable.gradient_200
+//                    animation.setAnimation(R.raw.rain)
+//                }
+//
+//                in 230..231, 233 -> {
+//                    setupStatusBarColor(R.color.sky_230)
+//                    R.drawable.gradient_230
+//                    animation.setAnimation(R.raw.rain)
+//                }
+//
+//                in 300..302 -> {
+//                    setupStatusBarColor(R.color.sky_300)
+//                    R.drawable.gradient_300
+//                    animation.setAnimation(R.raw.rain)
+//                }
+//
+//                in 500..501, 522 -> {
+//                    setupStatusBarColor(R.color.sky_500)
+//                    R.drawable.gradient_500
+//                }
+//
+//                in 600..601, 610 -> {
+//                    setupStatusBarColor(R.color.sky_600)
+//                    R.drawable.gradient_600
+//                }
+//
+//                in 611..612, 751 -> {
+//                    setupStatusBarColor(R.color.sky_611)
+//                    R.drawable.gradient_611
+//                }
+//
+//                800 -> {
+//                    setupStatusBarColor(R.color.sky_800)
+//                    R.drawable.gradient_blue_orenge
+//                    animation.setAnimation(R.raw.sun)
+//
+//                }
+//
+//                in 801..802 -> {
+//                    setupStatusBarColor(R.color.sky_801)
+//                    R.drawable.gradient_801
+//                    animation.setAnimation(R.raw.clouds)
+//                }
+//
+//                803 -> {
+//                    setupStatusBarColor(R.color.sky_803)
+//                    R.drawable.gradient_801
+//                    animation.setAnimation(R.raw.clouds)
+//                }
+//
+//                804 -> {
+//                    setupStatusBarColor(R.color.sky_804)
+//                    R.drawable.gradient_804
+//                    animation.setAnimation(R.raw.clouds)
+//                }
+//
+//                900 -> {
+//                    setupStatusBarColor(R.color.blue)
+//                    R.drawable.gradient_blue_blue
+//                }
+//
+//                else -> null
+//            }
+//
+//            drawableResId?.let {
+//                constraintMain.setBackgroundResource(drawableResId)
+//            }
+//        }
+//    }
 
     private fun setupStatusBarColor(color: Int) {
         activity?.window?.statusBarColor = resources.getColor(color)

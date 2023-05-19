@@ -53,4 +53,8 @@ dependencies {
 
     //Koin
     implementation "io.insert-koin:koin-android:3.4.0"
+
+    //Lottie
+    implementation 'com.airbnb.android:lottie:6.0.0'
+
 }
