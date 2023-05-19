@@ -86,14 +86,26 @@
                 app:strokeColor="@color/white"
                 tools:text="IQA" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvForecast"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnIqa"
+                tools:listitem="@layout/item_weather_forecast" />
+
             <include
                 android:id="@+id/includeSunrise"
                 layout="@layout/sunrise_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnIqa" />
+                app:layout_constraintTop_toBottomOf="@id/rvForecast" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

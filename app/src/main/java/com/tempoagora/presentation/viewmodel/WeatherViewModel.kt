@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.tempoagora.domain.usecase.GetWeatherForecastUseCase
 import com.tempoagora.domain.usecase.GetWeatherUseCase
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +24,7 @@ import kotlinx.coroutines.launch
 
 internal class WeatherViewModel(
     private val useCase: GetWeatherUseCase,
-    private val context: Context,
+    private val useCaseForecast: GetWeatherForecastUseCase,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
 
@@ -53,9 +54,23 @@ internal class WeatherViewModel(
         }
     }
 
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-
-    fun initLocationClient(context: Context) {
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
+    fun getWeatherForecast(latitude: Double, longitude: Double) {
+        viewModelScope.launch {
+            useCaseForecast(latitude, longitude)
+                .flowOn(dispatcher)
+                .onStart {
+                    mutableState.value = MainViewAction.LoadingState(true)
+                }
+                .catch {
+                    println(it.message)
+                    mutableState.value = MainViewAction.ErrorScreen(true)
+                }
+                .onCompletion {
+                    mutableState.value = MainViewAction.LoadingState(false)
+                }
+                .collect {
+                    mutableState.value = MainViewAction.WeatherForecast(it.data)
+                }
+        }
     }
 }

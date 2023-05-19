@@ -1,6 +1,7 @@
 package com.tempoagora.data.api
 
 import com.tempoagora.BuildConfig
+import com.tempoagora.data.model.WeatherForecastResponse
 import com.tempoagora.data.model.WeatherResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -14,7 +15,14 @@ internal interface WeatherBitService {
         @Query("lon") longitude: Double,
         @Query("key") apiKey: String = BuildConfig.API_KEY,
         @Query("include") include: String,
-        @Query("lang") lang : String = "pt"
+        @Query("lang") lang: String = "pt"
     ): WeatherResponse
 
+    @GET("forecast/daily")
+    suspend fun getWeatherForecast(
+        @Query("lat") latitude: Double,
+        @Query("lon") longitude: Double,
+        @Query("key") apiKey: String = BuildConfig.API_KEY,
+        @Query("lang") lang: String = "pt"
+    ): WeatherForecastResponse
 }

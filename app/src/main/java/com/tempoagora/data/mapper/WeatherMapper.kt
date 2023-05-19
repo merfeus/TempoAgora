@@ -1,6 +1,6 @@
 package com.tempoagora.data.mapper
 
-import com.tempoagora.data.model.extensions.Mapper
+import com.tempoagora.data.mapper.extensions.Mapper
 import com.tempoagora.data.model.DataResponse
 import com.tempoagora.data.model.WeatherLocalResponse
 import com.tempoagora.data.model.WeatherResponse
