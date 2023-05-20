@@ -33,9 +33,9 @@ Aqui está uma visão geral da estrutura de pacotes sugerida para o nosso projet
 
 Antes de embarcar nesta jornada climática, certifique-se de ter o seguinte em mãos:
 
-Android Studio (Flamingo | 2022.2.1)
-Kotlin (1.7.20
-Dispositivo Android ou Emulador
+* Android Studio (Flamingo | 2022.2.1)
+* Kotlin (1.7.20
+* Dispositivo Android ou Emulador
 
 ## 👨‍💻Autor
 
