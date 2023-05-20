@@ -6,7 +6,7 @@ Bem-vindo ao Tempo Agora, o aplicativo que traz a previsão do tempo até você 
 ## 🛠Características Principais
 Previsão do tempo em tempo real: Receba informações atualizadas sobre temperatura, umidade, velocidade do vento e muito mais, tudo isso na palma da sua mão.
 
-**Localização automática**: Aproveite o poder da tecnologia de localização do seu dispositivo. Com a nossa permissão, iremos encontrar a sua localização e fornecer uma previsão personalizada para a sua região.
+**Localização automática**: Aproveite o poder da tecnologia de localização do seu dispositivo. Com a sua permissão, iremos encontrar a sua localização e fornecer uma previsão personalizada para a sua região.
 
 **Interface intuitiva**: Navegue facilmente pelas telas elegantes e intuitivas do aplicativo. Com um design moderno e amigável, você terá uma experiência agradável enquanto verifica as informações climáticas.
 
