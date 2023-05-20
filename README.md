@@ -23,7 +23,7 @@ Aqui está uma visão geral da estrutura de pacotes sugerida para o nosso projet
 * model
 * repository
 * usecase
-* presentation
+* presentation 
 * di
 * view
 * viewmodel
@@ -41,4 +41,4 @@ Antes de embarcar nesta jornada climática, certifique-se de ter o seguinte em m
 
 * Mateus Morais
 * mateus658@hotmail.com
-* [Linkedin] (https://www.linkedin.com/in/mateus-morais-208b7b1a1/)
+* [Linkedin(https://www.linkedin.com/in/mateus-morais-208b7b1a1/)
