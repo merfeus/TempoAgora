@@ -3,8 +3,9 @@
 
 Bem-vindo ao Tempo Agora, o aplicativo que traz a previsão do tempo até você com estilo! Combinando a arquitetura MVVM, Clean Architecture e DDD, criamos uma experiência meteorológica excepcional para você se manter sempre informado sobre as condições climáticas.
 
-![image](https://github.com/merfeus/TempoAgora/assets/85200990/b38bb5f1-fd59-4efe-a430-676143616571)
 ![image](https://github.com/merfeus/TempoAgora/assets/85200990/1ef2a320-4527-4c98-938f-88fdcb949c1f)
+![image](https://github.com/merfeus/TempoAgora/assets/85200990/b38bb5f1-fd59-4efe-a430-676143616571)
+![image](https://github.com/merfeus/TempoAgora/assets/85200990/e3a1600b-c98c-4d9e-b634-b0abe1a22000)
 
 ## 🛠Características Principais
 Previsão do tempo em tempo real: Receba informações atualizadas sobre temperatura, umidade, velocidade do vento e muito mais, tudo isso na palma da sua mão.
