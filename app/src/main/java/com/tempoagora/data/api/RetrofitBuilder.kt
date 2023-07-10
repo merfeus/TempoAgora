@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 internal object RetrofitBuilder {
 
-    val retrofit = Retrofit.Builder()
+    private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl("https://api.weatherbit.io/v2.0/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()

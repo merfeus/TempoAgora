@@ -1,5 +1,9 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Tempo Agora</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="danid_permission" tools:ignore="ExtraTranslation">Permissão Para acessar logalização negada</string>
+    <string name="celcius">°C</string>
+    <string name="degree">°</string>
+    <string name="km">km/h</string>
 </resources>

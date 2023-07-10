@@ -8,9 +8,21 @@ import kotlinx.coroutines.flow.flow
 
 internal class WeatherDataSourceImpl(
     val weatherBitService: WeatherBitService,
-    val  mapper: WeatherMapper
+    val mapper: WeatherMapper
 ) : WeatherDataSource {
-    override fun getWeather(latitude: Double, longitude: Double, include : String): Flow<WeatherComponent> = flow {
-        emit(mapper.map(weatherBitService.getWeather(latitude = latitude, longitude = longitude, include = include)))
+    override fun getWeather(
+        latitude: Double,
+        longitude: Double,
+        include: String
+    ): Flow<WeatherComponent> = flow {
+        emit(
+            mapper.map(
+                weatherBitService.getWeather(
+                    latitude = latitude,
+                    longitude = longitude,
+                    include = include
+                )
+            )
+        )
     }
 }
