@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_blue_blue"
-
     tools:context=".presentation.fragment.ClimateFragment">
 
     <ProgressBar
@@ -52,6 +51,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -59,7 +59,7 @@
 
             <TextView
                 android:id="@+id/tvWeather"
-                style="@style/MaterialAlertDialog.Material3.Title.Text"
+                style="@style/TextAppearance.Material3.TitleLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
