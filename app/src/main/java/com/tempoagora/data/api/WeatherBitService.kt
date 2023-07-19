@@ -13,7 +13,7 @@ internal interface WeatherBitService {
     suspend fun getWeather(
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
-        @Query("key") apiKey: String = BuildConfig.API_KEY,
+        @Query("key") apiKey: String = "aa23877c90f7432c99de475a04db0ff8",
         @Query("include") include: String,
         @Query("lang") lang: String = "pt"
     ): WeatherResponse
@@ -22,7 +22,7 @@ internal interface WeatherBitService {
     suspend fun getWeatherForecast(
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
-        @Query("key") apiKey: String = BuildConfig.API_KEY,
+        @Query("key") apiKey: String = "aa23877c90f7432c99de475a04db0ff8",
         @Query("lang") lang: String = "pt"
     ): WeatherForecastResponse
 }

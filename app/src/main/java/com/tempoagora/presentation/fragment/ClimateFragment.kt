@@ -113,7 +113,7 @@ class ClimateFragment : Fragment(R.layout.fragment_climate) {
         when (state) {
             is MainViewAction.LoadingState -> {
                 binding.progressCircular.isVisible = state.isLoading
-                binding.scrollView2.isVisible = state.isLoading.not()
+                binding.constraintMain.isVisible = state.isLoading.not()
             }
 
             is MainViewAction.ErrorScreen -> {
@@ -165,6 +165,7 @@ class ClimateFragment : Fragment(R.layout.fragment_climate) {
 
     private fun setupBackgroundColor(temp: WeatherLocalComponent?) = with(binding) {
         temp?.let {
+            animation.alpha = 0.3f
             when (temp.code) {
                 in 200..201, 202 -> {
                     constraintMain.setBackgroundResource(R.drawable.gradient_200)
